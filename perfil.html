@@ -91,23 +91,26 @@
     <!-- Topbar End -->
 
     <div class="container mt-4">
-        <div class="row align-items-center">
+        <div class="row align-items-center" novalidate>
           <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-grey">
+            <form class="p-4 p-md-5 border rounded-3 bg-grey needs-validation">
+                <div class="form-floating mb-3">
+                    <label for="validationCustom01" class="form-label">Username</label>
+                    <input type="username" class="form-control" id="username" required/>
+                  </div>
               <div class="form-floating mb-3">
-                <label for="InputEmail" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="InputEmail" placeholder=" "/>
+                <label for="validationCustom01" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="validationCustom01" required/>
+              </div>
+              <div class="form-floating mb-3">
+                <label for="InputPassword" class="form-label">Repita a Password</label>
+                <input type="password" class="form-control" id="InputPassword" placeholder=" "/>
               </div>
               <div class="form-floating mb-3">
                 <label for="InputPassword" class="form-label">Password</label>
                 <input type="password" class="form-control" id="InputPassword" placeholder=" "/>
               </div>
-              <div class="checkbox mb-3">
-                <label>
-                  <input type="checkbox" value="remember-me"/> Remember me
-                </label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
             </form>
           </div>
         </div>
