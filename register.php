@@ -61,7 +61,7 @@
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-2 mr-1">2</span>HandCloth</h1>
                 </a>
             </div>
             <div class="col-lg-6 col-6 text-left">
@@ -92,72 +92,77 @@
 
     <body class="bg-light">
         <div class="container">
-            <div class="row mt-5">
-                <div class="col-lg-4 bg-white m-auto">
-                    <h2 class="text-center pt-3">Register</h2>
-                    <p class="text-center text-muted lead">It's free and takes a minute</p>
-                    <form action="#" method="post">
+            <h2 class="text-center pt-3">Register</h2>
+            <p class="text-center text-muted lead">It's free and takes a minute</p>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-4 bg-white m-3">
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text"><i class="fa fa-user"></i></span>
+                          <input type="text" id="username" name="username" required />
+                        </div>
+			<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" placeholder="First Name" name="firstname" required>
-                      </div>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" placeholder="Last Name" name="lastname" required>
+                        <input type="text" id="nome" name="nome" required pattern="[A-Za-z ]+" title="Digite somente letras." /><br><br>
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                        <input type="date" class="form-control" placeholder="Date of Birth" name="dob" required>
+                        <input type="date" id="data_nasc" name="data_nasc" required /><br><br>
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-venus-mars"></i></span>
-                        <select class="form-control" name="gender" required>
-                          <option value="" selected disabled hidden>Select Gender</option>
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                          <option value="other">Other</option>
+                        <select id="genero" name="genero" required>
+                            <option value="">Selecione</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                            <option value="O">Outro</option>
                         </select>
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-home"></i></span>
-                        <input type="text" class="form-control" placeholder="Address" name="address" required>
+                        <input type="text" id="morada" name="morada" required /><br><br>
                       </div>
+                </div>
+                <div class="col-lg-4 bg-white m-3">
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-location-arrow"></i></span>
-                        <input type="text" class="form-control" placeholder="City/Town" name="city" required>
+                        <input type="text" id="localidade" name="localidade" required /><br><br>
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
-                        <input type="text" class="form-control" placeholder="Postal Code" name="postalcode" required>
+                        <input type="text" id="codigo_postal" name="codigo_postal" required pattern="\d{4}-\d{3}" title="O código postal deve estar no formato XXXX-XXX"/><br><br>
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-phone"></i></span>
-                        <input type="tel" class="form-control" placeholder="Phone Number" name="phone" required>
+                        <input type="tel" id="telemovel" name="telemovel" required pattern="\d{9}" title="O telemóvel deve ter 9 numeros"/><br><br>
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                        <input type="email" class="form-control" placeholder="Email Address" name="email" required>
+                        <input type="email" id="email" name="email" required /><br><br>
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                        <input type="password" class="form-control" placeholder="Password" name="password" required>
+                        <input type="password" id="senha" name="senha" minlength="8" required /><br><br>
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                        <input type="password" class="form-control" placeholder="Repeat-Password" name="password" required>
-                      </div>             
+                        <input type="password" id="senha" name="senha" minlength="8" required /><br><br>
+                      </div> 
+                      <input type="submit" value="Cadastrar" />            
                         </form>
-                        <div class="d-grid">
-                            <button type="button" class="btn btn-primary btn-lg btn-block">Register</button>
-                            <p class="text-center text-muted lead mt-2">
-                                When you click the button, you agree to our
-                                <a href="#" class="text-primary">Terms and conditions</a> and <a href="#" class="text-primary">Privacy Policy</a>
-                            </p>
-                            <p class="text-center">
-                                Already have an account? <a href="#" class="text-primary">Login Here</a>
-                            </p>
-                        </div>
+                </form>           
                 </div>
+            </div>
+            <div class="d-grid">
+                <button type="button" class="btn btn-primary btn-md btn-block">Register</button>
+                <p class="text-center text-muted lead mt-2">
+                    When you click the button, you agree to our
+                    <a href="#" class="text-primary">Terms and conditions</a> and <a href="#" class="text-primary">Privacy Policy</a>
+                </p>
+                <p class="text-center">
+                    Already have an account? <a href="#" class="text-primary">Login Here</a>
+                </p>
             </div>
         </div>
     </body>
@@ -212,8 +217,8 @@
                                 <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                                    required="required" />
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required /><br><br>
                             </div>
                             <div>
                                 <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
@@ -259,3 +264,80 @@
 </body>
 
 </html>
+
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Estabelece uma ligação com a base de dados usando o programa abreconexao.php
+// A variável $conn é inicializada com a ligação estabelecida
+
+include "abreconexao.php";
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //Validando os dados recebidos
+        $nome = test_input($_POST["nome"]);
+        $data_nasc = test_input($_POST["data_nasc"]);
+        $email = test_input($_POST["email"]);
+        $senha = test_input($_POST["senha"]);
+        $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+        $genero = test_input($_POST["genero"]);
+        $morada = test_input($_POST["morada"]);
+        $codigo_postal = test_input($_POST["codigo_postal"]);
+        $localidade = test_input($_POST["localidade"]);
+        $telemovel = test_input($_POST["telemovel"]);
+        $username = test_input($_POST["username"]);
+
+        if (!preg_match("/^[a-zA-Z ]*$/",$nome)) {
+            echo "O nome deve conter apenas letras e espaços em branco.";
+        }
+	elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Formato de e-mail inválido.";
+        }
+	elseif (strlen($senha) < 8) {
+            echo "A senha deve ter pelo menos 8 caracteres.";
+        }
+	else {
+              echo "Cadastro efetuado com sucesso!";
+            //Aqui você pode inserir os dados do usuário em um banco de dados ou fazer qualquer outra coisa que precise ser feita.
+        }
+
+$stmt = $conn->prepare("INSERT INTO utilizador (username, senha, nome, genero, email, data_nascimento, morada, telemovel, localidade, cod_postal) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+
+// Retrieve the date of birth from the HTML form
+$date_of_birth = $_POST['data_nasc'];
+
+// Create a DateTime object with the date string
+$date = new DateTime($date_of_birth);
+
+// Format the date as a string in the required format (YYYY-MM-DD)
+$formatted_date = $date->format('Y-m-d');
+
+// Bind the formatted date to the prepared statement
+$stmt->bind_param("ssssssssss", $username, $senha, $nome, $genero, $email, $formatted_date, $morada, $telemovel, $localidade, $codigo_postal);
+
+// Execute the prepared statement
+if (!$stmt->execute()) {
+    die("Error: " . $stmt->error);
+}
+    
+
+$stmt->execute();
+$stmt->close();
+// Termina a ligação com a base de dados
+$conn->close();
+
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+?>
